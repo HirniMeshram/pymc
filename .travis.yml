@@ -1,6 +1,5 @@
 language: python
 sudo: false
-dist: trusty
 group: stable
 matrix:
   include:
