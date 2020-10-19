@@ -343,7 +343,7 @@ class CountDownLatch(object):
             self.main_lock.release()
         self.counter_lock.release()
 
-    def await_lock(self):
+    def await(self):
         self.main_lock.acquire()
         self.main_lock.release()
 
@@ -384,7 +384,7 @@ def map_noreturn(targ, argslist):
                         exc_callback=eb,
                         args=args,
                         requestID=id(args)))
-    done_lock.await_lock()
+    done_lock.await()
 
     if exceptions:
         six.reraise(*exceptions[0])
