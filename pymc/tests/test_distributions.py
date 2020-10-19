@@ -247,7 +247,7 @@ def compare_hist(hist, bins, like, x, figname, discrete=False):
     ax.bar(bins, hist, width)
     P.setp(ax.patches, alpha=.5)
     if discrete:
-        ax.plot(x, like, 'k', linestyle='steps')
+        ax.plot(x, like, 'k', linestyle='-')
     else:
         ax.plot(x, like, 'k')
     P.savefig(os.path.join(DIR, figname))
